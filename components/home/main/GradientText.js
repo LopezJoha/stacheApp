@@ -6,7 +6,7 @@ const GradientText=(props)=>{
     const { height, width } = useWindowDimensions();    
     const styles = StyleSheet.create({
         styledText:{
-            fontSize: width > 900 ? SIZES.xxxLarge : width > 600 ? SIZES.xxLarge : SIZES.xLarge,
+            fontSize:width > 900 ? SIZES.xxxLarge : width > 600 ? SIZES.xxLarge : width < 400 ? SIZES.interMed : SIZES.large,
             color: COLORS.primary,            
         }
     });

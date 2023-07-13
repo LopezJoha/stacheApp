@@ -90,9 +90,8 @@ const SecondSection = (props) => {
       <View style={styles.containerText}>     
         <View style={styles.title}>
           <HeadingText 
-            differentText = <Lettering textLettering=' Why ' bg={COLORS.background3} 
-            
-            paddingLeft={15}  />                                              
+            differentText = <Lettering textLettering=' Why ' bg={COLORS.background3}             
+            paddingLeft={15} />                                              
             afterLettering  = {title} alignContent= {'center'} textAlign= {'center'}/>
         </View>
 

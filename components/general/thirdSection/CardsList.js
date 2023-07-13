@@ -8,8 +8,7 @@ import StyledButton from '../../home/main/StyledButton';
 const  CardsList = (props) => { 
   const { height, width } = useWindowDimensions();  
 
-  const styles = StyleSheet.create({
-  
+  const styles = StyleSheet.create({  
     containerList: {
       backgroundColor: COLORS.background1,
       flexDirection: width > 700 ?  'row' : 'column', 
@@ -18,19 +17,16 @@ const  CardsList = (props) => {
       
     },
     calltheAction:{     
-      //paddingVertical:'10%',      
-      //flexDirection: 'row',
-      //justifyContent: 'center',
-      //alignItems:'center',
-      //gap:15      
-    },
-    
+      paddingVertical:'10%',      
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems:'center',           
+    },    
   });
   
   
   return(  
-    <View style = {styles.containerList}>    
-        
+    <View style = {styles.containerList}>
         {CardsInfo.map((card)=>(
             <Card 
               key = {card.id}
@@ -46,7 +42,6 @@ const  CardsList = (props) => {
               <View style={styles.calltheAction}><StyledButton buttonText = 'Launche Stache'/></View> : null}/>         
         ))}  
     </View>
-
   );
 }
 

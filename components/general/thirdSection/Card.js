@@ -9,68 +9,58 @@ const  Card = (props)=> {
 
 const styles = StyleSheet.create({
   container:{
-    margin: width > 700? 10: 5,
+    margin: width > 700? 10: 5.5,
         
   },
   textNumber:{
-   // fontFamily: 'SatoshiRegular',
-    fontSize: width > 600 ? SIZES.xxLarge : width < 400 ? SIZES.interMed : SIZES.large,
+    fontSize: SIZES.large,
     color: COLORS.primary,
     position: 'absolute', 
-    top: width > 700 || props.id === props.activeCard ? '7%': '25%',  
-    left:  width > 700 &&  props.id === props.activeCard ? '30%' : '10%', 
-      
+    top: width > 700 || props.id === props.activeCard ? '5%': '30%',  
+    left:  width > 700 &&  props.id === props.activeCard ? '3%' :  width > 700 &&  props.id !== props.activeCard ? '35%':'5%', 
+    zIndex:10          
   },  
   text1Container:{
     display: props.id === props.activeCard ? 'none': 'flex', 
-    width: '80%', 
-    alignContent: 'center',
-    justifyContent: width > 900 ? 'center' : 'flex-start', 
-    borderColor: 'red', 
-    borderWidth: 2, 
+    alignContent: width > 700 ? 'center' : 'flex-end', 
+    justifyContent:  'center', 
+    height: width> 900 ? '100%' : '60%', 
+    paddingLeft:  width > 500 ? '15%' : width > 900 ? 0 :'20%', 
+    paddingTop: width > 500 ? '7%' : '10%',        
   },   
   text:{
-    //fontFamily: 'SatoshiRegular',
-    fontSize: width > 700 ? SIZES.xxMedium : SIZES.xMedium, 
+    fontSize: width > 700 ? SIZES.xMedium : SIZES.xxMedium, 
     color: 'white', 
     maxWidth:  width > 900 ? '70%': '95%',  
-    textAlign:  width > 900 ?'center' : 'left',
-    
-    //alignSelf:'center', 
-    borderColor: 'violet', 
-    borderWidth: 2, 
-    
+    textAlign: 'center',    
+    alignSelf:  width > 700 ? 'center' : 'flex-start'        
   },  
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundRepeat:'no-repeat',
-    backgroundPosition: 'top',
-    backgroundSize: 'cover',
-    margin:20, 
-    width:'100%' , 
-    height:'50%'      
-  },
   absoluteContainer: {
-    position: 'absolute',
-    bottom:0,
-    left: 0,
-    right: 0,
-    width:'100%', 
-    height:'45%',
-    marginBottom:'10%'    
+    ...StyleSheet.absoluteFillObject, 
+    opacity:0.9,
+    maxWidth: props.id === 3 ? '100%' : '98%', 
+     height:'100%',
+   // marginBottom:'10%', 
+   marginTop:'10%'
+   
   },
   imgContainer:{
-    width: '100%', 
-    height:'60%',
-  }, 
-  image: { 
     display: props.id === props.activeCard ? 'flex' : 'none',
-    height: "98%",
-    width: "100%",
-    resizeMode: width < 600 ?  'contain' : "cover"
+    width: '100%',
+    height: props.id === 4 ? "40%" : '60%',
+    alignContent: 'center', 
+    justifyContent:'center', 
+    margin: props.id === 3 ? 0 : 10,
+  }, 
+  image: {     
+    height:  props.id === 4 ? '70%': "98%",
+    width: props.id === 4 ? '65%':"100%",
+    resizeMode: width > 600  || props.id === 3 ? 'cover' :'contain' , 
+    alignSelf:'center', 
+    
   },
   gradient:{
-    flex:1
+    flex:1.5
   },
   gredient: {   
   borderRadius:20,
@@ -78,22 +68,23 @@ const styles = StyleSheet.create({
   },  
   textContainer:{
     width: '100%', 
-    height:'40%',
-   // paddingTop: '50%',
-   // padding: 20,
-    //gap:10
+    height:'35%',  
+    paddingHorizontal : '5%'
   },
   title:{
-    fontFamily: 'SatoshiRegular',
-    fontSize: SIZES.medium,
-    fontWeight: 600,
+    display: props.id === props.activeCard ? 'flex': 'none', 
+    fontSize: width > 900 ? SIZES.medium : SIZES.xxxMedium,
+    fontWeight: 500,
     color: 'white', 
-    textAlign:'center'
+    textAlign:'center', 
+    alignSelf: props.id === 4 ? 'center' : 'flex-start', 
+    paddingBottom: '3%'
   }, 
   subtitle:{
-    //fontFamily: 'SatoshiRegular',
-    fontSize: SIZES.xxMedium,
+    display: props.id === props.activeCard ? 'flex': 'none', 
+    fontSize: width > 700 ? SIZES.xMedium : SIZES.small,
     color: 'white',    
+    alignSelf: props.id === 4 ? 'center' : 'flex-start'
   },
   activeCard : {
     flex: 1,
@@ -102,7 +93,7 @@ const styles = StyleSheet.create({
     borderRadius:20,
     margin: 2,    
     minHeight:  width > 700 ? 400 : 400, 
-    maxWidth : width > 700 ? 550 : '100%'
+    maxWidth : width > 700 ? 560 : '100%'
   },
   inactiveCard : {
     backgroundColor: COLORS.cardBackground,       
@@ -110,7 +101,7 @@ const styles = StyleSheet.create({
     borderRadius:20,    
     margin: 2,    
     minHeight: width > 700 ?  400 : 100, 
-    minWidth: width > 700 ? 150 : '95%'
+    minWidth: width > 700 ? 160 : '95%'
   },  
 });
 
@@ -148,69 +139,33 @@ console.log("props image: ", props.image);
           ]}>
 
         <TouchableOpacity style={[props.id === props.activeCard ? styles.activeCard: styles.inactiveCard,]} 
-                        onPress={props.onPress}>  
-            
+                        onPress={props.onPress}>              
             <Text style={[styles.textNumber]}>{props.number}</Text>
             
             <View style={styles.text1Container}>
               <Text style={[styles.text]}>{props.text}</Text>
             </View>
             <View style={styles.imgContainer}>            
-              {getImage()}
+               {getImage()}
+                <View style={styles.absoluteContainer}>
+                  <LinearGradient
+                    colors={['rgba(27, 26, 26, 0.1)', 'rgba(27, 26, 26, 1)', 'rgba(27, 26, 26, 1)']}
+                    start={{x:0, y:0}}
+                    end={{x: 0, y: 1}}
+                    style={styles.gradient}/>                   
+                </View> 
             </View>
 
-            <View style={[styles.textContainer,
-            //{paddingTop : props.id === 4 ? '30%': '50%'}
-            ]}>      
-            <Text style={[styles.title, 
-                        {display: props.id === props.activeCard ? 'flex': 'none',
-                        // fontSize: props.id === 4 ? 21 : SIZES.medium,
-                        // fontWeight: props.id === 4 ? 100 : 600,
-                        // alignSelf: props.id === 4 ? 'center' : 'center',
-                        //maxWidth:  props.id === 4 ? '80%': '100%'
-                        }]}>{props.title}
-            </Text>             
-            {props.callAction}
-            <Text style={[styles.subtitle,
-                    {display: props.id === props.activeCard ? 'flex': 'none',
-                    fontSize: props.id === 4 ? 19 : SIZES.xxMedium,
-                    alignSelf: props.id === 4 ? 'center' : 'flex-start'
-                    }]}>{props.subtitle}
-            </Text> 
-          </View>         
-
-           
-    
-        
-          {/* 
-          <View style={[styles.overlay,
-                        {backgroundImage: props.id === props.activeCard ? props.image : '', 
-                        backgroundSize: props.id === 4 ?   '50%' : 'contain',
-                        margin: props.id === 3 ? 0 : 20,
-                        marginTop: props.id === 4 ? 70 : 20
-                        }]}>          
-          </View>   */}
-                
-          {/* <View style={styles.absoluteContainer}>
-                <LinearGradient
-                colors={['rgba(27, 26, 26, 0.1)', 'rgba(27, 26, 26, 1)', 'rgba(27, 26, 26, 1)']}
-                  start={{x:0, y:0}}
-                  end={{x: 0, y: 1}}
-                  style={styles.gradient}
-                />                   
-          </View>  */}
-
-          
-            
+            <View style={[styles.textContainer]}>      
+              <Text style={[styles.title]}>{props.title}</Text>             
+              {props.callAction}
+              <Text style={[styles.subtitle]}>{props.subtitle}</Text> 
+          </View>   
         </TouchableOpacity>  
       </LinearGradient>
-    </View>
-    
+    </View>    
   );
 }
-
-
-
 
 export default Card;
 
