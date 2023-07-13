@@ -16,7 +16,7 @@ const SecondSection = (props) => {
 
   const styles = StyleSheet.create({
     container:{ 
-      height: width > 900 ?  height : height * 75/ 100,
+      height: width > 900 || width < 360 || height < 500 ? height : height * 75/ 100,
       backgroundColor: COLORS.background3, 
        
     },

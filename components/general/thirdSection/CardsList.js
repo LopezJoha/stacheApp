@@ -13,14 +13,15 @@ const  CardsList = (props) => {
     containerList: {
       backgroundColor: COLORS.background1,
       flexDirection: width > 700 ?  'row' : 'column', 
-     
-      // gap:15,   
+      width:  width > 700 ? width :'100%', 
+      paddingHorizontal:'3%'
+      
     },
     calltheAction:{     
-      paddingVertical:'10%',      
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems:'center',
+      //paddingVertical:'10%',      
+      //flexDirection: 'row',
+      //justifyContent: 'center',
+      //alignItems:'center',
       //gap:15      
     },
     

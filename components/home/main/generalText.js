@@ -26,3 +26,8 @@ const  GeneralText = (props) => {
 
 export default GeneralText;
 
+
+
+
+
+

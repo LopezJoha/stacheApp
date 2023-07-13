@@ -21,44 +21,45 @@ const ThirdSection = () => {
 
     const styles = StyleSheet.create({    
       container:{
-        backgroundColor: COLORS.background1,
-        alignContent: 'center', 
-        justifyContent: 'center',
-        //height: width < 900  || height < 500 ? height *2 : height, 
-        height: height*2, 
-        width: width
+        // backgroundColor: COLORS.background1,
+        // alignContent: 'center', 
+        // justifyContent: 'center',        
+        //height: height + height/2, 
+        // width: width, 
+        // bordertWidth:2, 
+        // borderColor:'purple'
                   
       },
       containerText:{
-        maxWidth: '65%',
-        alignSelf:'center',
-       gap:'12%', 
-       paddingBottom:'5%', 
+      //   maxWidth: '65%',
+      //   alignSelf:'center',
+      //  gap:'12%', 
+      //  paddingBottom:'5%', 
         
       }, 
       cardListContainer:{
-        paddingHorizontal:'2.5%', 
+        //paddingHorizontal:'2.5%', 
         
         
       },
       buttons:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin:40
+        // flex: 1,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // margin:40
       },
       innerButtons:{
-        width:'12%',
-        flexDirection: 'row',
-        paddingHorizontal:'1%',
-        marginBottom:'5%',
-        height: 20    
+        // width:'12%',
+        // flexDirection: 'row',
+        // paddingHorizontal:'1%',
+        // marginBottom:'5%',
+        // height: 20    
       },
       general:{
-        minHeight: 10, 
-        minWidth: 10,
-        borderRadius:30,        
-      }
+      //   minHeight: 10, 
+      //   minWidth: 10,
+      //   borderRadius:30,        
+       }
       
     });
   
