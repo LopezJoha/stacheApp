@@ -3,12 +3,38 @@ import { COLORS, SIZES } from '../../../constants';
 
 
 const CardFaq =(props)=>{
+
+    const getImage = () => {
+        switch(props.id){
+          case 1: return <Image 
+                            source={require('../../assets/images/cart&phone.png')} 
+                            style={styles.image}
+                          />
+          case 2: return <Image 
+                            source={require('../../assets/images/calendar.png')} 
+                            style={styles.image}
+                          />
+          case 3: return <Image 
+                            source={require('../../assets/images/compu.png')} 
+                            style={styles.image}
+                          />
+          
+        }
+      }
     return(
         <TouchableOpacity style={styles.container} key={props.id}>
             <View style={styles.imageContainer}>
-                <ImageBackground source={props.src} style={styles.image}>
+                {getImage()}
+                <View style={styles.absoluteContainer}>
+                  <LinearGradient
+                    colors={['rgba(27, 26, 26, 0.1)', 'rgba(27, 26, 26, 1)', 'rgba(27, 26, 26, 1)']}
+                    start={{x:0, y:0}}
+                    end={{x: 0, y: 1}}
+                    style={styles.gredient}/>                   
+                </View> 
+                {/* <ImageBackground source={props.src} style={styles.image}>
                     <View style={styles.imageStyle}></View>                    
-                </ImageBackground>
+                </ImageBackground> */}
             </View> 
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{props.title}</Text>
@@ -62,10 +88,23 @@ const styles = StyleSheet.create({
         alignSelf:'center'
    
     },
+    absoluteContainer: {
+        ...StyleSheet.absoluteFillObject, 
+        opacity:0.9,
+        //maxWidth: props.id === 3 ? '100%' : '98%', 
+         height:'100%',
+         width: '100%', 
+       // marginBottom:'10%', 
+      // marginTop:'10%', 
+    },
+    gredient:{
+        flex:1.5
+      },
     textContainer:{
         height: '30%',
         paddingTop:'2.5%',
-        gap:10,        
+        //gap:10, 
+        margin:5       
     },
     title:{
         fontSize: SIZES.middle, 

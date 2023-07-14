@@ -1,41 +1,58 @@
-import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native'; 
+import { View, Text, TouchableOpacity, ImageBackground, StyleSheet, useWindowDimensions } from 'react-native'; 
 import { COLORS, SIZES } from '../../../constants';
-import HeadingText from '../../home/main/HeadingText';
-import FaqList from './FaqList';
-
+// import Heading from '../../home/main/Heading';
+// import FaqList from './FaqList';
+import imgBg from '../../../assets/images/linesFaq.png'
 
 const FourthSection =()=>{
+    const { height, width } = useWindowDimensions();  
+
+    const styles = StyleSheet.create({
+        container:{   
+            flex:1,  
+            width: width,
+            height: height,   
+            backgroundColor: COLORS.background3, 
+            flexDirection: 'column',        
+            justifyContent: 'center',
+            alignItems: 'center',        
+    
+        },
+        imgContainer:{
+            position: 'absolute',
+            //   opacity: 0.8,
+            right  : -50,
+            bottom: -60,
+          width:'100%',
+          height: '90%',
+          zIndex: -1,
+          
+        }, 
+        textContainer:{
+            paddingTop:'10%'
+        },
+        listContainer:{
+    
+        }       
+    })
+    
     return(
         <View style={styles.container}>   
-                   
-            <View style={styles.textContainer}>
-                <HeadingText align='center'
-                            size = {SIZES.xxLarge}                        
+             <ImageBackground source={imgBg} style={styles.imgContainer}>
+
+                    
+            {/* <View style={styles.textContainer}>
+                <Heading textAlign='center'                                                 
                             beforeLettering = "Frequently Asked Question"/>
-            </View>
+            </View> */}
             
-            <View style={styles.listContainer}>
+            {/* <View style={styles.listContainer}>
                 <FaqList/>
-            </View>
-              
+            </View> */}
+            </ImageBackground>         
         </View>
     );
 }
 
-const styles = StyleSheet.create({
-    container:{   
-        flex:1,    
-        backgroundColor: COLORS.background3, 
-        flexDirection: 'column', 
-        
-        justifyContent: 'center',
-        alignItems: 'center',        
-
-    },
-    textContainer:{
-        paddingTop:'10%'
-    },
-   
-})
 
 export default FourthSection;

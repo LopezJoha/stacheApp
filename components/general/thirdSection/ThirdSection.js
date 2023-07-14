@@ -29,49 +29,46 @@ const ThirdSection = () => {
                   
       },
       containerText:{
-        width: width > 900 ? '50%': '90%',
+      width: width > 900 ? '50%': '90%',
       paddingVertical: width > 900 ? '5%':'10%', 
       justifyContent: 'center', 
       alignContent: 'center' ,
       alignSelf:'center'
         
       }, 
-      title:{      
-       // width: width > 900 ? '70%': '90%',
-        justifyContent: 'center', 
-        alignItems: 'center' , 
+      title:{ 
+      justifyContent: 'center', 
+      alignItems: 'center' , 
       }, 
       subtitle:{
         justifyContent:'center', 
-        alignItems: 'center',
-        //width: width < 900 ? '85%': '70%',
+        alignItems: 'center',      
         flex:1, 
         paddingTop: width > 900 ? '3%':'5%',
              
       }, 
       cardListContainer:{
-        //paddingHorizontal:'2.5%', 
-        
-        
+         
       },
       buttons:{
-        flex: 1,
+        width: '100%',
+        height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        margin:40
       },
       innerButtons:{
-        width:'12%',
+        width: width > 900 ? '10%' : '30%',
         flexDirection: 'row',
-        paddingHorizontal:'1%',
-        marginBottom:'5%',
-        height: 20    
+        marginVertical: width > 900 ? '2.5%' :'5%',
+        alignSelf: 'center'
       },
       general:{
-      //   minHeight: 10, 
-      //   minWidth: 10,
-      //   borderRadius:30,        
-       }
+        margin: 2, 
+        height: 10,        
+        width: 10,
+        borderRadius: 50,
+        
+      }
       
     });
   
@@ -102,10 +99,10 @@ const ThirdSection = () => {
                     colors={[active === index ? COLORS.primary : COLORS.buttonBorder,
                             active === index ? COLORS.secondary : COLORS.buttonBorder]}                  
                     style={[styles.general,
-                    {flex: active === index ? 3 : .3, } 
+                    {flex: active === index ? 1.5 : null } 
                     ]}
                 >
-                  <TouchableOpacity key={index} style={{width:'100%', height:'100%', borderRadius:50}} onPress={()=>handlePressCard(index)}/>
+                  <TouchableOpacity key={index} style={{width:'100%', height:'100%'}} onPress={()=>handlePressCard(index)}/>
                 </LinearGradient>  
                 ))}   
             </View>

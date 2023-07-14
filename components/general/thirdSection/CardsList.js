@@ -33,7 +33,6 @@ const  CardsList = (props) => {
               id = {card.id}
               number = {card.cardName}
               text ={card.previewText}
-              image = {card.src}
               title ={card.title}
               subtitle = {card.subtitle}
               onPress = {()=>props.onPressCard(card.id)}

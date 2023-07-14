@@ -3,25 +3,26 @@ import { COLORS, icons, images, SIZES } from '../../constants';
 import MainSection from '../general/firstSection/MainSection';
 import SecondSection from '../general/secondSection/SecondSection';
 import ThirdSection from '../general/thirdSection/ThirdSection';
-/*import FourthSection from '../general/fourthSection/FourtSection';
-import FifthSection from '../general/fifthSection/FifthSection';
+import FourthSection from '../general/fourthSection/FourtSection';
+/*import FifthSection from '../general/fifthSection/FifthSection';
 '*/
 
 
-const Home= ()=>{ 
+const Home =()=>{ 
   return(
     <View style={styles.container}>            
       <MainSection/> 
       <SecondSection/>
       <ThirdSection/>
+      <FourthSection/>
       
         {/* 
-          
-        <FourthSection/>  
           <FifthSection /> */}            
     </View>    
   );
 }
+
+export default Home;
 
 const styles = StyleSheet.create({  
   container:{
@@ -37,4 +38,3 @@ const styles = StyleSheet.create({
   
 });
 
-export default Home;
