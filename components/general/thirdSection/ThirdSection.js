@@ -66,8 +66,7 @@ const ThirdSection = () => {
         margin: 2, 
         height: 10,        
         width: 10,
-        borderRadius: 50,
-        
+        borderRadius: 50,        
       }
       
     });
