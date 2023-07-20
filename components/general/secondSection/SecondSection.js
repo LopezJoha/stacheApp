@@ -11,14 +11,13 @@ const title = " do you need a marketplace to sell your NFTs?"
 const subtitle = 'Right now, selling NFTs without a marketplace or middleman is practically impossible. If crypto is about true ownership, why is something so simple so hard?'
 
 const SecondSection = (props) => {
-
   const { height, width } = useWindowDimensions();  
 
   const styles = StyleSheet.create({
     container:{ 
       height: width > 900 || width < 360 || height < 500 ? height : height * 75/ 100,
       backgroundColor: COLORS.background3, 
-       
+      marginBottom: width > 900 ? '10%': '1%'
     },
     containerText:{        
       paddingTop: width > 900 ? '2%': '10%',
@@ -53,7 +52,6 @@ const SecondSection = (props) => {
     },
     overlayContainer: {   
       paddingTop: '100%',    
-      //paddingTop:width < 450 ? '100%': width < 900 ? '80%': '80%',
       marginTop: width < 450 ? '15%' : width > 900 ? 10: 20, 
       
     },
@@ -68,8 +66,7 @@ const SecondSection = (props) => {
     grediant:{
     borderRadius: width > 600 ? 15: 10,
     backgroundColor: COLORS.background1
-    }
-   
+    }   
   });
   
   return (    
@@ -94,16 +91,13 @@ const SecondSection = (props) => {
             paddingLeft={15} />                                              
             afterLettering  = {title} alignContent= {'center'} textAlign= {'center'}/>
         </View>
-
         <View style={styles.subtitle}>
           <GeneralText text={subtitle} lineHeight={25} textAlign={'center'}/>
         </View>         
-      </View>           
-        
+      </View>
     </View>
   );
 }
-
 
 export default SecondSection;
 

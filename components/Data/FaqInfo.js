@@ -1,7 +1,7 @@
-export const FaqInfo = [
+export const FaqInfo = [    
     {
         id:1,
-        src: require('../../assets/images/cart&phone.png'),
+        src: require('../../assets/images/cartphone.png'),
         title: 'Is Stache a downloadable app or extension?', 
         subtitle: "Nope! Stache is a smart account (aka smart contract wallet) that lives on the Solana blockchain, but is controlled by your existing wallet(s) like Phantom or Solflare. This means that you can access your Stache from any wallet on any device."
     },
@@ -14,9 +14,8 @@ export const FaqInfo = [
     {
         id:3,
         src: require('../../assets/images/compu.png'),
-        title: "Is there a demo available?", 
+        title: "Is there a demo \n available?", 
         subtitle: "Yes! You can explore Stache's capabilities (including the experimental features not yet available on Mainnet) safely on Devnet at"
-    },
-    
+    },    
     
 ]

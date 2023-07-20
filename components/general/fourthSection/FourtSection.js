@@ -22,10 +22,8 @@ const FourthSection =()=>{
             bottom: width > 900? 0: -60,
             width: width > 900? '60%':'100%',
             height: width > 900? '100%': '90%',
-            resizeMode: 'center',
-           
-            zIndex: -1,
-          
+            resizeMode: 'center',           
+            zIndex: -1,          
         }, 
         textContainer:{
             paddingTop:'20%'
@@ -40,10 +38,12 @@ const FourthSection =()=>{
             <View style={styles.textContainer}>
                 <Heading textAlign='center' beforeLettering = "Frequently Asked Question"/>
             </View>
-             <ImageBackground source={imgBg} style={styles.imgContainer}/> 
-            <View style={styles.listContainer}>
-                <FaqList/>
-            </View>    
+             <ImageBackground source={imgBg} style={styles.imgContainer}> 
+            
+            </ImageBackground>
+                <View style={styles.listContainer}>
+                    <FaqList/>
+                </View>    
         </View>
     );
 }

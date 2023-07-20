@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     position: 'absolute', 
     top: width > 700 || props.id === props.activeCard ? '5%': '30%',  
-    left:  width > 700 &&  props.id === props.activeCard ? '3%' :  width > 700 &&  props.id !== props.activeCard ? '35%':'5%', 
+    left:  width > 700 &&  props.id === props.activeCard ? '3%' :  width > 700 &&  props.id !== props.activeCard ? '50%':'5%', 
+    transform: width > 700 &&  props.id !== props.activeCard ? [{translateX:('-50%')}] : null,
     zIndex:10          
   },  
   text1Container:{
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     alignContent: width > 700 ? 'center' : 'flex-end', 
     justifyContent:  'center', 
     height: width> 900 ? '100%' : '60%', 
-    paddingLeft:  width > 500 ? '15%' : width > 900 ? 0 :'20%', 
+    paddingLeft: width > 900 ? 0 : width > 500 ? '15%':'20%', 
     paddingTop: width > 500 ? '7%' : '10%',        
   },   
   text:{
@@ -101,7 +102,9 @@ const styles = StyleSheet.create({
     borderRadius:20,    
     margin: 2,    
     minHeight: width > 700 ?  400 : 100, 
-    minWidth: width > 700 ? 160 : '95%'
+    minWidth: width > 700 ? 160 : '95%', 
+    
+    
   },  
 });
 

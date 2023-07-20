@@ -25,34 +25,32 @@ const ThirdSection = () => {
         alignContent: 'center', 
         justifyContent: 'center',  
         bordertWidth:2, 
-        borderColor:'purple'
-                  
+        borderColor:'purple', 
+        marginBottom: '5%'            
       },
       containerText:{
-      width: width > 900 ? '50%': '90%',
-      paddingVertical: width > 900 ? '5%':'10%', 
-      justifyContent: 'center', 
-      alignContent: 'center' ,
-      alignSelf:'center'
-        
+        width: width > 900 ? '50%': '90%',
+        paddingVertical: width > 900 ? '5%':'10%', 
+        justifyContent: 'center', 
+        alignContent: 'center' ,
+        alignSelf:'center'        
       }, 
       title:{ 
-      justifyContent: 'center', 
-      alignItems: 'center' , 
+        justifyContent: 'center', 
+        alignItems: 'center', 
       }, 
       subtitle:{
         justifyContent:'center', 
         alignItems: 'center',      
         flex:1, 
-        paddingTop: width > 900 ? '3%':'5%',
-             
+        paddingTop: width > 900 ? '3%':'5%',             
       }, 
       cardListContainer:{
          
       },
       buttons:{
         width: '100%',
-        height: 50,
+        height: 20,
         justifyContent: 'center',
         alignItems: 'center',
       },
@@ -67,8 +65,7 @@ const ThirdSection = () => {
         height: 10,        
         width: 10,
         borderRadius: 50,        
-      }
-      
+      }      
     });
   
     return (   
@@ -76,8 +73,9 @@ const ThirdSection = () => {
           <View style={styles.containerText}>
             <View style={styles.title}>
                 <HeadingText textAlign='center'                                               
-                            beforeLettering = "Enter"  
-                            differentText = <GradientText textGradient=" Stache "/> />
+                  beforeLettering = "Enter"  
+                  differentText = <GradientText textGradient=" Stache "/> 
+                />
             </View>
             <View style={styles.subtitle}>
               <GeneralText textAlign='center' text={subtitle} />
@@ -86,10 +84,9 @@ const ThirdSection = () => {
 
           <View style={styles.cardListContainer}>
             {<CardsList 
-                  onPressCard={handlePressCard}                        
-                  activeCardId={active}  
-                
-                /> }
+              onPressCard={handlePressCard}                        
+              activeCardId={active}                  
+            /> }
           </View>
           <View style={styles.buttons}>
               <View style={[styles.innerButtons]}>
@@ -98,9 +95,9 @@ const ThirdSection = () => {
                     colors={[active === index ? COLORS.primary : COLORS.buttonBorder,
                             active === index ? COLORS.secondary : COLORS.buttonBorder]}                  
                     style={[styles.general,
-                    {flex: active === index ? 1.5 : null } 
+                    {flex: active === index ? 1: null } 
                     ]}
-                >
+                  >
                   <TouchableOpacity key={index} style={{width:'100%', height:'100%'}} onPress={()=>handlePressCard(index)}/>
                 </LinearGradient>  
                 ))}   
@@ -109,8 +106,6 @@ const ThirdSection = () => {
       </View>
     );
 }
-
-
 
 export default ThirdSection;
 

@@ -8,21 +8,18 @@ const Lettering=(props)=>{
 
   const { height, width } = useWindowDimensions();    
   
-  const styles = StyleSheet.create({
-    
+  const styles = StyleSheet.create({    
     grediant:{     
       borderRadius: width > 600 ? 15: 10, 
       alignContent:'center'
     },
     containerLinear:{                       
       margin:1,    
-      borderRadius: width > 600 ? 15: 10,
-      
+      borderRadius: width > 600 ? 15: 10,      
     },
     styledText: {        
       fontSize: width > 900 ? SIZES.xxxLarge : width > 600 ? SIZES.xxLarge : SIZES.xLarge,
-      color: COLORS.primary     
-            
+      color: COLORS.primary  
     }
   });
 
@@ -40,7 +37,7 @@ const Lettering=(props)=>{
           <Text style={[styles.styledText, 
           {padding:props.padding, 
           textAlign:props.textAlign,
-          lineHeight:props.lineHeight
+          lineHeight:props.lineHeight, 
           }]}>{props.textLettering}</Text>    
 
         </View>
