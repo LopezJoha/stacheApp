@@ -17,8 +17,7 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     position: 'absolute', 
     top: width > 700 || props.id === props.activeCard ? '5%': '30%',  
-    left:  width > 700 &&  props.id === props.activeCard ? '3%' :  width > 700 &&  props.id !== props.activeCard ? '50%':'5%', 
-    transform: width > 700 &&  props.id !== props.activeCard ? [{translateX:('-50%')}] : null,
+    left:  width > 700 &&  props.id === props.activeCard ? '3%' :  width > 700 &&  props.id !== props.activeCard ? '40%':'5%', 
     zIndex:10          
   },  
   text1Container:{

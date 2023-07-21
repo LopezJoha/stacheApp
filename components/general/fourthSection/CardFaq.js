@@ -8,7 +8,7 @@ const CardFaq =(props)=>{
 
     const styles = StyleSheet.create({
         container:{
-            height:  width > 700 ? 400 : 300, 
+            height:  width > 700 ? 420 : 380, 
             width : width > 900 ? '30%' : width < 900 && width > 550 ? '95%' : '80%',
             flexDirection:'column', 
             alignContent:'space-around', 
@@ -26,37 +26,30 @@ const CardFaq =(props)=>{
             alignContent:"center",
             justifyContent: 'center',
             padding: '5%', 
-            borderWidth: 2, 
-            borderColor: 'red', 
-            paddingTop: '13%'
+            paddingTop: '13%', 
+            position:'relative'
         },
         image:{
-            height:  width > 500 ? 70 : 50, 
-            width: width > 500 ? 70 : 50, 
-            alignSelf:'center',             
+            height:  width > 500 ? 70 : 60, 
+            width: width > 500 ? 70 : 60, 
+            alignSelf:'center',    
+                   
         },
         absoluteContainer: {
-            position: 'absolute',
-            height:  130, 
-            width: 130,           
-            left: '50%', 
-            transform:[{translateX:('-50%')}],
-            opacity:0.05, 
-            flex:1,            
-            borderRadius: '50%', 
+            ...StyleSheet.absoluteFillObject,
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            opacity:0.3,                     
             zIndex:-1, 
-           
+
         },
         gredient:{
-            flex:1,
-            borderRadius: '50%',
-            shadowColor: COLORS.text1, 
-            shadowRadius: 30,
+            width:200, 
+            height:200,
         },
         textContainer:{
             width: '100%',
-            padding: '5%', 
-            
+            padding: '5%',
             
         },
         title:{
@@ -96,12 +89,9 @@ const CardFaq =(props)=>{
             <View style={styles.imageContainer}>
                 {getImage()}
                 <View style={styles.absoluteContainer}>
-                  <LinearGradient                   
-                    colors = {[COLORS.text1, COLORS.text1]}
-                    start={{x:0, y:0}}
-                    end={{x: 0, y: 1}}
-                    style={styles.gredient}/>                   
-                </View>                 
+                    <Image source={require('../../../assets/images/doodad.png')} style={styles.gredient}/>
+                </View>               
+                               
             </View> 
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{props.title}</Text>

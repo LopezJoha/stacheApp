@@ -13,20 +13,33 @@ const FourthSection =()=>{
             backgroundColor: COLORS.background3, 
             flexDirection: 'column',        
             justifyContent: 'center',
-            alignItems: 'center',        
+            alignItems: 'center', 
+            marginTop:'15%'       
             
         },
         imgContainer:{
-            position: 'absolute',      
-            right  :  width > 900? -300 : -50,
-            bottom: width > 900? 0: -60,
-            width: width > 900? '60%':'100%',
-            height: width > 900? '100%': '90%',
-            resizeMode: 'center',           
-            zIndex: -1,          
+            ...StyleSheet.absoluteFillObject,
+            borderWidth:2, 
+            borderColor:'red',            
+            // position: 'absolute',  
+            // right:-300,    
+            // bottom: -60,
+            // top:15, 
+            // width: width > 900? '70%':'100%',
+            // height: width > 900? '103%': '90%',
+            // resizeMode: 'cover',           
+            zIndex: -1,   
+                   
+
         }, 
+        img:{
+        height: '100%', 
+        width:'50%', 
+        borderWidth:2, 
+        borderColor:'blue',
+        },
         textContainer:{
-            paddingTop:'20%'
+           
         },
         listContainer:{
     
@@ -38,12 +51,12 @@ const FourthSection =()=>{
             <View style={styles.textContainer}>
                 <Heading textAlign='center' beforeLettering = "Frequently Asked Question"/>
             </View>
-             <ImageBackground source={imgBg} style={styles.imgContainer}> 
-            
-            </ImageBackground>
-                <View style={styles.listContainer}>
-                    <FaqList/>
-                </View>    
+            <View style={styles.imgContainer}>
+                <ImageBackground source={imgBg} style={styles.img}/> 
+            </View>
+            <View style={styles.listContainer}>
+                <FaqList/>
+            </View>    
         </View>
     );
 }

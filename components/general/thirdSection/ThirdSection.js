@@ -53,17 +53,18 @@ const ThirdSection = () => {
         height: 20,
         justifyContent: 'center',
         alignItems: 'center',
+        marginVertical: width > 900 ? '2.5%' :'5%',
       },
       innerButtons:{
         width: width > 900 ? '10%' : '30%',
         flexDirection: 'row',
-        marginVertical: width > 900 ? '2.5%' :'5%',
+       
         alignSelf: 'center'
       },
       general:{
-        margin: 2, 
-        height: 10,        
-        width: 10,
+        margin: 3, 
+        height: 7,        
+        width: 7,
         borderRadius: 50,        
       }      
     });
@@ -95,7 +96,7 @@ const ThirdSection = () => {
                     colors={[active === index ? COLORS.primary : COLORS.buttonBorder,
                             active === index ? COLORS.secondary : COLORS.buttonBorder]}                  
                     style={[styles.general,
-                    {flex: active === index ? 1: null } 
+                    {flex: active === index ? .7: null } 
                     ]}
                   >
                   <TouchableOpacity key={index} style={{width:'100%', height:'100%'}} onPress={()=>handlePressCard(index)}/>
