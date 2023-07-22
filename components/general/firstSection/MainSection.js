@@ -20,6 +20,20 @@ const MainSection = (props) => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };  
+
+  function Link(){
+    if(Platform.OS === "web"){
+      window.open('https://app.stache.io/', '_blank')
+    }
+  } 
+
+  function Link2(){
+    if(Platform.OS === "web"){
+      window.open('https://discord.com/invite/shyrW3CmTB', '_blank')
+    }
+  } 
+
+
   const styles = StyleSheet.create({  
     mainContainer: {    
       flex:1,
@@ -109,15 +123,14 @@ const MainSection = (props) => {
       alignContent:'center',
       justifyContent: 'center',       
     },
-    containerFAQ: {    
-        
-      // alignItems: 'center',
+    containerFAQ: {   
       alignContent:'center',
       justifyContent: 'center',
       alignContent: 'space-around',
       borderWidth: 2, 
       borderColor: 'transparent', 
-      padding:50
+      padding:50, 
+      paddingBottom:'10%'
     },
     buttonContainer: {
       position: 'absolute',
@@ -167,7 +180,7 @@ const MainSection = (props) => {
           </View>
 
           <View style={styles.launchButton} > 
-              {width > 600 ? (<StyledButton buttonText = 'Launch Stache'/>):
+              {width > 600 ? (<StyledButton buttonText = 'Launch Stache' onPress={()=>Link()}/>):
               (<TouchableOpacity style={styles.button2}>
                     <Text style={styles.text2}>Launch Stache</Text>
                 </TouchableOpacity>
@@ -186,7 +199,7 @@ const MainSection = (props) => {
           <TouchableOpacity style={styles.button} >
             <Text style={styles.textFAQ}>FAQ</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}  >
+          <TouchableOpacity style={styles.button} onPress={()=>Link2()} >
             <Text style={styles.textFAQ}>Join Discord</Text>
           </TouchableOpacity>
         </View>

@@ -8,7 +8,7 @@ const CardFaq =(props)=>{
 
     const styles = StyleSheet.create({
         container:{
-            height:  width > 700 ? 420 : 380, 
+            height:  width > 600 ? 420 : 380, 
             width : width > 900 ? '30%' : width < 900 && width > 550 ? '95%' : '80%',
             flexDirection:'column', 
             alignContent:'space-around', 
@@ -71,7 +71,7 @@ const CardFaq =(props)=>{
         containerButton:{
             justifyContent:'center',
             alignItems:'center',  
-            padding:'5%'         
+                  
         }
     })
     

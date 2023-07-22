@@ -17,6 +17,12 @@ const FixedElements=()=>{
     setIsHovered(false);
   };  
 
+  function Link2(){
+    if(Platform.OS === "web"){
+      window.open('https://discord.com/invite/shyrW3CmTB', '_blank')
+    }
+  } 
+
   return (
     <View style={styles.container}>     
         {/* {Platform.OS === 'web' ? ( */}
@@ -37,7 +43,7 @@ const FixedElements=()=>{
                     resizeMode="stretch">
                 <View style={{paddingLeft:40, marginVertical:10, marginHorizontal:10}}>
                 <Text style={styles.buttonText}>{floatTetxt}</Text>
-                <TouchableOpacity style={styles.discordContainer}>
+                <TouchableOpacity style={styles.discordContainer} onPress={()=>Link2()}>
                     <Image source={require('../../../assets/images//discord2.png')}
                             style={styles.image}></Image>
                     <Text style={styles.buttonText1}>Join Discord</Text>

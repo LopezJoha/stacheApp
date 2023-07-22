@@ -1,7 +1,6 @@
 import React, { useState }from 'react';
-import { TouchableOpacity, Text, StyleSheet, useWindowDimensions } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, useWindowDimensions, Platform } from 'react-native';
 import { COLORS, SIZES } from '../../../constants';
-
 
 const StyledButton = (props) => {
   const { height, width } = useWindowDimensions(); 
@@ -14,6 +13,7 @@ const StyledButton = (props) => {
     setIsHovered(false);
   };  
 
+  
   const styles = StyleSheet.create({
     btnContainer: {  
       flexDirection: 'row',
@@ -31,8 +31,7 @@ const StyledButton = (props) => {
       alignSelf: 'center'   
     },
     btnText: {   
-      fontSize: SIZES.small,
-      //fontSize: width > 900 ? SIZES.small : width > 650 ? SIZES.xxxMedium : SIZES.xMedium,     
+      fontSize: SIZES.small,         
       alignSelf:'center'           
     },    
   });
@@ -42,7 +41,8 @@ const StyledButton = (props) => {
                       isHovered ? ({backgroundColor: COLORS.text1}) : 
                                   ({backgroundColor: COLORS.buttonBackground})]}    
                 onMouseOver={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}>
+                onMouseLeave={handleMouseLeave}
+                onPress={()=>{ props.onPress()}}>
         {props.image}
        <Text style={[styles.btnText, 
                       isHovered ? ({color: COLORS.buttonBackground}) : 

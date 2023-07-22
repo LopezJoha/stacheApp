@@ -20,7 +20,7 @@ const SecondSection = (props) => {
       marginBottom: width > 900 ? '10%': '1%'
     },
     containerText:{        
-      paddingTop: width > 900 ? '2%': '10%',
+      paddingTop: width > 900 ? 0 : '10%',
       position:'absolute',          
       top: 0, 
       left: 0, 
@@ -28,7 +28,7 @@ const SecondSection = (props) => {
       bottom: 0, 
       justifyContent: 'center', 
       alignItems: 'center',
-      paddingTop:'10%'
+      paddingTop: width > 900 ? '3%': '10%'
       
     },
     title:{      

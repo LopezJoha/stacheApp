@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ImageBackground, StyleSheet, useWindowDimensions } from 'react-native'; 
+import { View, Text, TouchableOpacity, Image, StyleSheet, useWindowDimensions } from 'react-native'; 
 import { COLORS, SIZES } from '../../../constants';
 import Heading from '../../home/main/Heading';
 import FaqList from './FaqList';
@@ -13,36 +13,27 @@ const FourthSection =()=>{
             backgroundColor: COLORS.background3, 
             flexDirection: 'column',        
             justifyContent: 'center',
-            alignItems: 'center', 
-            marginTop:'15%'       
-            
+            alignContent: 'center',                  
+            paddingBottom:'3%'
         },
         imgContainer:{
             ...StyleSheet.absoluteFillObject,
-            borderWidth:2, 
-            borderColor:'red',            
-            // position: 'absolute',  
-            // right:-300,    
-            // bottom: -60,
-            // top:15, 
-            // width: width > 900? '70%':'100%',
-            // height: width > 900? '103%': '90%',
-            // resizeMode: 'cover',           
-            zIndex: -1,   
-                   
-
+            zIndex: -1,    
+            overflow:'hidden'          
         }, 
         img:{
-        height: '100%', 
-        width:'50%', 
-        borderWidth:2, 
-        borderColor:'blue',
-        },
+            height:'110%',
+            width:'35%',             
+            alignSelf:'flex-end', 
+            transform: width > 900 ? [{rotate: '45deg'}] : [{rotate: '0deg'}] ,
+            
+        }, 
         textContainer:{
-           
+            paddingTop:'7%', 
+            paddingBottom: '3%'
         },
         listContainer:{
-    
+           
         }       
     })
     
@@ -52,7 +43,7 @@ const FourthSection =()=>{
                 <Heading textAlign='center' beforeLettering = "Frequently Asked Question"/>
             </View>
             <View style={styles.imgContainer}>
-                <ImageBackground source={imgBg} style={styles.img}/> 
+                <Image source={imgBg} style={styles.img}/> 
             </View>
             <View style={styles.listContainer}>
                 <FaqList/>

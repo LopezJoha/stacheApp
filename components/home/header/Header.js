@@ -7,7 +7,13 @@ import StyledButton from '../main/StyledButton';
 import {COLORS, SIZES} from '../../../constants'
 
 const Header = (props) => {
-  const { height, width, scale, fontScale } = useWindowDimensions();    
+  const { height, width, scale, fontScale } = useWindowDimensions();   
+  
+  function Link(){
+    if(Platform.OS === "web"){
+      window.open('https://app.stache.io/', '_blank')
+    }
+  } 
 
   const styles = StyleSheet.create({  
     container:{
@@ -41,7 +47,7 @@ const Header = (props) => {
   return (
     <View style={styles.container}>        
         <ScreenHeaderIcon iconImg={ logo } stylesImg={styles.logoImg}/>
-        <StyledButton buttonText={'Launch Stache'}  extraStyles={styles.extraStyles}/>        
+        <StyledButton buttonText={'Launch Stache'}  extraStyles={styles.extraStyles} onPress={()=>Link()}/>        
     </View>
   );
 }

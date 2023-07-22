@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, useWindowDimensions } from 'react-native'; 
+import { View, Text, StyleSheet, useWindowDimensions, Platform } from 'react-native'; 
 import Lettering from '../../home/main/lettering';
 import { COLORS, SIZES } from '../../../constants';
 import CardFaq from './CardFaq';
@@ -7,7 +7,19 @@ import StyledButton from '../../home/main/StyledButton';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const FaqList =()=>{
-    const { height, width } = useWindowDimensions();  
+    const { height, width } = useWindowDimensions(); 
+
+    function Link(){
+        if(Platform.OS === "web"){
+          window.open('https://app.stache.io/', '_blank')
+        }
+      } 
+    
+    function Link3(){
+        if(Platform.OS === "web"){
+          window.open('https://devnet.stache.io/', '_blank')
+        }
+    } 
 
     const styles = StyleSheet.create({
         container:{
@@ -46,25 +58,17 @@ const FaqList =()=>{
                 subtitle={faq.subtitle}
                 button={faq.id === 2 ? 
                     <StyledButton buttonText='Launche Stache' 
-                    padding={5}/> : null ||                                 
+                    padding={5} onPress={()=>Link()} /> : null ||                                 
                     faq.id === 3 ? 
                     <LinearGradient
                         colors={[COLORS.primary, COLORS.secondary]}
-                        style={[styles.grediant]}>
-                        <View style={[styles.containerLinear]}>
-                            <Text style={[styles.styledText]}>https://devnet.stache.io.</Text>  
+                        style={[styles.grediant]}
+                        >
+                        <View style={[styles.containerLinear]} >
+                            <Text style={[styles.styledText]} onPress={()=>Link3()} >https://devnet.stache.io.</Text>  
                         </View>
-                    </LinearGradient>
-                    // <Lettering textLettering='https://devnet.stache.io/' 
-                    // fontSize={SIZES.xMedium}
-                    // padding={3}
-                    // border={5}
-                    // padH={8}
-                    // bg={COLORS.cardBackground}
-                    // /> 
+                    </LinearGradient>                   
                     : null }
-
-
                 />
             ))}
         </View>

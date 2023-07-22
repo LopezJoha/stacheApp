@@ -37,7 +37,7 @@ const SIZES = {
   large: 30,
   xLarge: 32,
   xxLarge: 40,
-  xxxLarge: 54 
+  xxxLarge: 46 
 };
  
 

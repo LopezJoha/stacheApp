@@ -4,8 +4,8 @@ import MainSection from '../general/firstSection/MainSection';
 import SecondSection from '../general/secondSection/SecondSection';
 import ThirdSection from '../general/thirdSection/ThirdSection';
 import FourthSection from '../general/fourthSection/FourtSection';
-/*import FifthSection from '../general/fifthSection/FifthSection';
-'*/
+import FifthSection from '../general/fifthSection/FifthSection';
+
 
 
 const Home =()=>{ 
@@ -15,9 +15,7 @@ const Home =()=>{
       <SecondSection/>
       <ThirdSection/>
       <FourthSection/>
-      
-        {/* 
-          <FifthSection /> */}            
+      <FifthSection />            
     </View>    
   );
 }
